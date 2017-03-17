@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ImmuneApp</string>
+    <string name="app_image">AppImage</string>
+    <string name="fragment_one">Read Me</string>
+    <string name="fragment_two">Chats</string>
+    <string name="fragment_three">Schedule</string>
+
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tutorial.aurie.finalyearproject.Welcome">
+
+    <ImageView
+        android:id="@+id/imageViewAppDemoImage"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/appdemoimage" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutUnamePsword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewAppDemoImage"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="Username"
+
+            />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextUsername"
+            android:inputType="textPassword"
+            android:text="Password"
+
+            />
+
+        <TextView
+            android:id="@+id/textViewForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextPassword"
+            android:text="Forgot Password?"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutToNextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutUnamePsword"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:text="Sign Up"
+            android:textColor="@color/colorLime"
+            android:textSize="@dimen/textsize"
+            android:textStyle="bold"
+
+            />
+
+        <EditText
+            android:id="@+id/editTextSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:text="Sign In"
+            android:textColor="@color/colorLime"
+            android:textSize="@dimen/textsize"
+            android:textStyle="bold"
+
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
