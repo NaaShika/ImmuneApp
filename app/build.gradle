@@ -3,7 +3,7 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.tutorial.aurie.finalyearproject"
         minSdkVersion 15
@@ -31,3 +31,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.0.1'
 }
+
+apply plugin: 'com.google.gms.google-services'
+
+
+
