@@ -66,10 +66,15 @@
 
 
     </RelativeLayout>
+<RelativeLayout
+    android:id="@+id/relativeLayoutButtonLogin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/relativeLayoutLogin"
+    >
 
     <Button
         android:id="@+id/buttonLoginBtn"
-        android:layout_below="@+id/relativeLayoutLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -82,11 +87,22 @@
         android:background="@color/colorLime"
         />
 
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLoginBtn"
+        android:layout_below="@+id/relativeLayoutButtonLogin"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 

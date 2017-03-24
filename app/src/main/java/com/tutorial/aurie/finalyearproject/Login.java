@@ -32,10 +32,13 @@ public class Login extends AppCompatActivity {
 
                 if (fullName.isEmpty()){
                     Toast.makeText(Login.this, "Please type your full name", Toast.LENGTH_LONG).show();
+                    return;
                 }else if(passWord.isEmpty()){
                     Toast.makeText(Login.this, "Please type your preferred password",Toast.LENGTH_LONG).show();
+                    return;
                 }else if (passWord.length() < 5){
                     Toast.makeText(Login.this, "Type a stronger password",Toast.LENGTH_LONG).show();
+                    return;
                 }else {
                     startActivity(new Intent(Login.this, TabActivity.class));
                 }
