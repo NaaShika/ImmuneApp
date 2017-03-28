@@ -89,7 +89,7 @@
 
     <ProgressBar
         android:visibility="gone"
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBarLogin"
         android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
