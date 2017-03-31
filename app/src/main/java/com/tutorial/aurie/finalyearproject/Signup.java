@@ -58,7 +58,7 @@ public class Signup extends AppCompatActivity {
                     Toast.makeText(Signup.this, "Please enter a complete phone number", Toast.LENGTH_LONG).show();
                     return;
                 } else if (phoneNumber.isEmpty()) {
-                    Toast.makeText(Signup.this, "Please type your fullname", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signup.this, "Please type your phone number", Toast.LENGTH_LONG).show();
                     return;
                 } else if (passWord.isEmpty()) {
                     Toast.makeText(Signup.this, "Please type your fullname", Toast.LENGTH_LONG).show();
