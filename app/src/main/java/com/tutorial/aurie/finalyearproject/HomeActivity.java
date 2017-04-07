@@ -10,6 +10,13 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.tutorial.aurie.finalyearproject.Fragments.ChildListFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.KnowledgeCentreFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.PrivacyPolicyFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.ProfileFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.RecordsFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.ScheduleFragment;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override

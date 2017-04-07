@@ -66,6 +66,8 @@ public class Signup extends AppCompatActivity {
                 } else if (passWord.length() < 6) {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
+                }else {
+                        startActivity(new Intent(Signup.this, HomeActivity.class));
                 }
 
                 Log.e("Print","running");
@@ -77,9 +79,8 @@ public class Signup extends AppCompatActivity {
 
                 String email = phoneNumber + "@immune.com";
 
-                Log.e("Print","might be here");
 
-                mAuth.createUserWithEmailAndPassword(email, passWord)
+               /** mAuth.createUserWithEmailAndPassword(email, passWord)
                         .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -102,7 +103,7 @@ public class Signup extends AppCompatActivity {
                                 }
 
                             }
-                        });
+                        } ); **/
 
             }
 
