@@ -47,12 +47,12 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 else if (item.getItemId() == R.id.menuCategories){
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new CategoriesFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new KnowledgeCentreFragment());
                     fragmentTransaction.commit();
                 }
                 else if (item.getItemId() == R.id.menuAboutUs){
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new AboutUsFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new ChildListFragment());
                     fragmentTransaction.commit();
                 }
                 else {

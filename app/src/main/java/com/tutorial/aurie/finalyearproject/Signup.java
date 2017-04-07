@@ -49,7 +49,7 @@ public class Signup extends AppCompatActivity {
 
                 Log.e("Print", "Something here");
                 if (fullName.isEmpty()) {
-                    Toast.makeText(Signup.this, "Please type your fullname", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signup.this, "Please type your full name", Toast.LENGTH_LONG).show();
                     return;
                 } else if (fullName.length() < 4) {
                     Toast.makeText(Signup.this, "Please enter a valid username", Toast.LENGTH_LONG).show();
@@ -61,17 +61,24 @@ public class Signup extends AppCompatActivity {
                     Toast.makeText(Signup.this, "Please type your phone number", Toast.LENGTH_LONG).show();
                     return;
                 } else if (passWord.isEmpty()) {
-                    Toast.makeText(Signup.this, "Please type your fullname", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Signup.this, "Please type your full name", Toast.LENGTH_LONG).show();
                     return;
                 } else if (passWord.length() < 6) {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
                 }
 
+                Log.e("Print","running");
+
                 progressBar.setVisibility(View.VISIBLE);
                 // to disable the button
                 buttonSignUp.setEnabled(false);
+                Log.e("Print","checking");
+
                 String email = phoneNumber + "@immune.com";
+
+                Log.e("Print","might be here");
+
                 mAuth.createUserWithEmailAndPassword(email, passWord)
                         .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -84,6 +91,9 @@ public class Signup extends AppCompatActivity {
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
+
+                                Log.e("Print","how about here");
+
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(Signup.this,"Failed to create account. Try again",Toast.LENGTH_SHORT).show();
                                 }else {
