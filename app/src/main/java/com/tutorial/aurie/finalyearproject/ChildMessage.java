@@ -8,9 +8,7 @@ public class ChildMessage {
     private int profileImage;
     private String childName;
     private String age;
-    private String DOB;
-    private String Gender;
-    private String PhoneNumber;
+    private String gender;
 
     public int getProfileImage() {
         return profileImage;
@@ -36,36 +34,18 @@ public class ChildMessage {
         this.age = age;
     }
 
-    public String getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
-    }
-
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
-    }
-
-    public ChildMessage(int profileImage, String childName, String age, String DOB, String gender, String phoneNumber) {
+    public ChildMessage(int profileImage, String childName, String age, String gender) {
         this.profileImage = profileImage;
         this.childName = childName;
         this.age = age;
-        this.DOB = DOB;
-        Gender = gender;
-        PhoneNumber = phoneNumber;
+        this.gender = gender;
     }
 }
