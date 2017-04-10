@@ -47,10 +47,8 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
         return convertView;
     }
 
-    public GridAdapter(@NonNull Context context, @LayoutRes int resource, List<ChildMessage> childMessages, Activity context1, int resource1) {
+    public GridAdapter(@NonNull Context context, @LayoutRes int resource, List<ChildMessage> childMessages) {
         super(context, resource);
         this.childMessages = childMessages;
-        this.context = context1;
-        this.resource = resource1;
     }
 }
