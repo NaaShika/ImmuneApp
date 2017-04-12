@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.tutorial.aurie.finalyearproject.Adapters.TabAdapter;
+
 public class TabActivity extends AppCompatActivity {
 
     @Override

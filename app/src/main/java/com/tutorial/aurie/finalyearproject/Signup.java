@@ -114,8 +114,7 @@ public class Signup extends AppCompatActivity {
         textViewShortcutToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent next = new Intent(Signup.this, Login.class);
-                startActivity(next);
+
             }
         });
     }

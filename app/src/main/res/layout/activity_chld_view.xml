@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.tutorial.aurie.finalyearproject.ChldView">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/profileImageChild"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:src="@drawable/appdemoimage"
+        app:civ_border_color="@color/colorGrey"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="#8BC34A"
+        app:civ_shadow_radius="10"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/editTextChildName"
+        android:layout_below="@+id/profileImageChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:inputType="text"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextChildAge"
+        android:layout_below="@+id/editTextChildName"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:inputType="number"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextChildDOB"
+        android:layout_toRightOf="@+id/editTextChildAge"
+        android:layout_below="@+id/editTextChildName"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:hint="DOB"
+        android:inputType="number"
+        android:layout_margin="10dp"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkboxFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextChildAge"
+        android:text="F"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkboxMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextChildAge"
+        android:layout_toRightOf="@+id/checkboxFemale"
+        android:text="M"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+        />
+
+    <EditText
+        android:id="@+id/editTextParentNumber"
+        android:layout_toRightOf="@+id/checkboxMale"
+        android:layout_below="@+id/editTextChildAge"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:inputType="number"
+        android:layout_margin="10dp"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextParentEmail"
+        android:layout_below="@+id/editTextParentNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="number"
+        android:layout_margin="10dp"
+
+        />
+
+    <CheckBox
+        android:id="@+id/checkboxNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextParentEmail"
+        android:layout_toRightOf="@+id/checkboxFemale"
+        android:text="Notifications"
+        android:textSize="24sp"
+        android:layout_margin="10dp"
+        />
+
+
+</RelativeLayout>

@@ -1,13 +1,15 @@
-package com.tutorial.aurie.finalyearproject;
+package com.tutorial.aurie.finalyearproject.Adapters;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.tutorial.aurie.finalyearproject.Objects.Message;
+import com.tutorial.aurie.finalyearproject.R;
 
 import java.util.List;
 

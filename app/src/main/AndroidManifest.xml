@@ -22,7 +22,9 @@
         <activity android:name=".TabActivity" />
         <activity android:name=".Welcome" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ListShowAssignment" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".ChatMessage" />
+        <activity android:name=".ChldView"></activity>
     </application>
 
 </manifest>
