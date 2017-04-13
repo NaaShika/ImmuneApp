@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
+        android:textColorHint="@color/colorDeepGreen"
         android:inputType="text"
         android:layout_margin="10dp"
         />
@@ -35,21 +36,24 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:hint="Age"
+        android:textColorHint="@color/colorDeepGreen"
         android:inputType="number"
         android:layout_margin="10dp"
         />
 
     <EditText
-        android:id="@+id/editTextChildDOB"
-        android:layout_toRightOf="@+id/editTextChildAge"
-        android:layout_below="@+id/editTextChildName"
-        android:layout_width="170dp"
+        android:id="@+id/date"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:hint="DOB"
-        android:inputType="number"
-        android:layout_margin="10dp"
-
-        />
+        android:layout_below="@+id/editTextChildName"
+        android:layout_centerHorizontal="true"
+        android:background="@color/blueGray200"
+        android:hint="Select Date..."
+        android:padding="15dp"
+        android:textColor="#897"
+        android:textColorHint="@color/colorDeepGreen"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/checkboxFemale"
@@ -57,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextChildAge"
         android:text="F"
+        android:textColor="@color/colorDeepGreen"
         android:textSize="24sp"
         android:layout_margin="10dp"
 
@@ -69,6 +74,7 @@
         android:layout_below="@+id/editTextChildAge"
         android:layout_toRightOf="@+id/checkboxFemale"
         android:text="M"
+        android:textColor="@color/colorDeepGreen"
         android:textSize="24sp"
         android:layout_margin="10dp"
         />
@@ -80,6 +86,7 @@
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:hint="Phone Number"
+        android:textColorHint="@color/colorDeepGreen"
         android:inputType="number"
         android:layout_margin="10dp"
 
@@ -91,6 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
+        android:textColorHint="@color/colorDeepGreen"
         android:inputType="number"
         android:layout_margin="10dp"
 
@@ -103,8 +111,20 @@
         android:layout_below="@+id/editTextParentEmail"
         android:layout_toRightOf="@+id/checkboxFemale"
         android:text="Notifications"
+        android:textColor="@color/colorDeepGreen"
         android:textSize="24sp"
         android:layout_margin="10dp"
+        />
+
+    <Button
+        android:id="@+id/buttonSaveChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkboxNotification"
+        android:text="Save"
+        android:textColor="@color/colorDeepGreen"
+        android:textSize="24sp"
+        android:layout_margin="20dp"
         />
 
 
