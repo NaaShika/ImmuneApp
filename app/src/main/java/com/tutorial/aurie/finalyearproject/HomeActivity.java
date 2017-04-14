@@ -10,13 +10,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.tutorial.aurie.finalyearproject.Fragments.ChildListFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.DoctorProfileFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.KnowledgeCentreFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.PrivacyPolicyFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.ProfileFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.RecordsFragment;
-import com.tutorial.aurie.finalyearproject.Fragments.ScheduleFragment;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.ChildList;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.DoctorProfileFragment;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.KnowledgeCentre;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.Profile;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.Records;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.Schedule;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -40,23 +39,23 @@ public class HomeActivity extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.menuProfile) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new ProfileFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new Profile());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuSchedule) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new ScheduleFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new Schedule());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuRecords) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new RecordsFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new Records());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuKnowledgeCentre) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new KnowledgeCentreFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new KnowledgeCentre());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuChildList) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new ChildListFragment());
+                    fragmentTransaction.replace(R.id.frameLayout, new ChildList());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuDDrProfile) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

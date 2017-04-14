@@ -67,7 +67,7 @@ public class Signup extends AppCompatActivity {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
                 }else {
-                        startActivity(new Intent(Signup.this, HomeActivity.class));
+                        startActivity(new Intent(Signup.this, TabActivity.class));
                 }
 
                 Log.e("Print","running");

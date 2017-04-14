@@ -22,10 +22,14 @@
         <activity android:name=".TabActivity" />
         <activity android:name=".Welcome" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ChatActivity" />
         <activity android:name=".ChatMessage" />
         <activity android:name=".ChldView" />
-        <activity android:name=".Fragments.DoctorProfileFragment"></activity>
+        <activity android:name=".ToolbarActivities.ChildList" />
+        <activity android:name=".ToolbarActivities.KnowledgeCentre" />
+        <activity android:name=".ToolbarActivities.Profile" />
+        <activity android:name=".ToolbarActivities.Records" />
+        <activity android:name=".ToolbarActivities.Schedule" />
+
     </application>
 
 </manifest>

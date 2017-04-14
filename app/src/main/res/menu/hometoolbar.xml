@@ -2,29 +2,41 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_search"
-        android:title="Search"
-        app:showAsAction="always" />
+    <group android:checkableBehavior="single">
 
-    <item
-        android:id="@+id/action_shareOne"
-        android:icon="@drawable/ic_share"
-        android:title="Share"
-        app:showAsAction="always" />
+        <item
+            android:id="@+id/menuChildList"
+            app:showAsAction="always"
+            android:title="Child List" />
+        <item
+            android:id="@+id/menuDDrProfile"
+            android:title="Doctor Profile" />
+        <item
+            android:id="@+id/menuSchedule"
+            android:title="Schedule" />
+
+        <item
+            android:id="@+id/menuKnowledgeCentre"
+            android:title="Knowledge Centre" />
+
+        <item
+            android:id="@+id/menuRecords"
+            android:title="Records" />
+        <item
+            android:id="@+id/menuEmergencyContacts"
+            android:title="Emergency Contacts" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/menuAboutUs"
+            android:title="About Us" />
 
 
-    <item
-        android:id="@+id/action_shareTwo"
-        android:icon="@drawable/ic_share"
-        android:title="Share"
-        app:showAsAction="collapseActionView" />
-    <item
-        android:id="@+id/action_share"
-        android:icon="@drawable/ic_share"
-        android:title="Share"
-        app:showAsAction="collapseActionView" />
+    </group>
+
 
 
 </menu>

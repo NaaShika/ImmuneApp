@@ -23,11 +23,7 @@ public class TabAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (position == 0) {
             return new FragmentOne();
-        } else if (position == 1) {
-            return new FragmentTwo();
-        } else {
-            return new FragmentThree();
-        }
+        } else return new FragmentTwo();
     }
 
     @Override

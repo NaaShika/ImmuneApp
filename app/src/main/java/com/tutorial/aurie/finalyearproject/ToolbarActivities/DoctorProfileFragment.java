@@ -1,24 +1,14 @@
-package com.tutorial.aurie.finalyearproject.Fragments;
+package com.tutorial.aurie.finalyearproject.ToolbarActivities;
 
-import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.tutorial.aurie.finalyearproject.Adapters.DrProfileAdapter;
-import com.tutorial.aurie.finalyearproject.Adapters.GridAdapter;
-import com.tutorial.aurie.finalyearproject.ChldView;
-import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
 import com.tutorial.aurie.finalyearproject.Objects.DoctorProfileMessage;
 import com.tutorial.aurie.finalyearproject.R;
 
