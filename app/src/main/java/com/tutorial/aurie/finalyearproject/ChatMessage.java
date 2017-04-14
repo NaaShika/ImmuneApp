@@ -35,8 +35,9 @@ public class ChatMessage extends AppCompatActivity {
         Bitmap yourIcon = BitmapFactory.decodeResource(getResources(), R.drawable.face_1);
         String yourName = "Emily";
 
-        final User me = new User(myId, myName, myIcon);
-        final User you = new User(yourId, yourName, yourIcon);
+        final com.github.bassaer.chatmessageview.models.User me = new com.github.bassaer.chatmessageview.models.User(myId, myName, myIcon);
+        final com.github.bassaer.chatmessageview.models.User you = new com.github.bassaer.chatmessageview.models.User(yourId, yourName, yourIcon);
+
 
         mChatView = (ChatView)findViewById(R.id.chat_view);
 

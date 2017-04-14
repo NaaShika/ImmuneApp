@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.meg7.widget.RectangleImageView
+            android:id="@+id/rectangleImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/mother_child"
+            android:scaleType="centerCrop"
+            android:layout_margin="5dp"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDrProf"
+        android:layout_toRightOf="@+id/relativeLayoutImage"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textviewDrName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Name"
+            android:textSize="24sp"
+            android:textColor="@color/colorBlack"
+
+            />
+
+        <TextView
+            android:id="@+id/textviewSpeciality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:text="General Practitioner"
+            android:textSize="14sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDrReach"
+        android:layout_below="@+id/relativeLayoutImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_call_black_24dp"
+            android:layout_weight="1"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sms_black_24dp"
+            android:layout_weight="1"
+
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_email_black_24dp"
+            android:layout_weight="1"
+
+            />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLineOne"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/linearLayoutDrReach"
+        android:layout_margin="5dp"
+        android:alpha="0.5"
+        android:background="@color/colorGrey" />
+
+</RelativeLayout>

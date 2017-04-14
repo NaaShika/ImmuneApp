@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.tutorial.aurie.finalyearproject.Fragments.ChildListFragment;
+import com.tutorial.aurie.finalyearproject.Fragments.DoctorProfileFragment;
 import com.tutorial.aurie.finalyearproject.Fragments.KnowledgeCentreFragment;
 import com.tutorial.aurie.finalyearproject.Fragments.PrivacyPolicyFragment;
 import com.tutorial.aurie.finalyearproject.Fragments.ProfileFragment;
@@ -37,32 +38,31 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 drawerLayout.closeDrawers();
 
-                if(item.getItemId() == R.id.menuProfile){
+                if (item.getItemId() == R.id.menuProfile) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new ProfileFragment());
                     fragmentTransaction.commit();
-                }
-                else if (item.getItemId() == R.id.menuSchedule){
+                } else if (item.getItemId() == R.id.menuSchedule) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new ScheduleFragment());
                     fragmentTransaction.commit();
-                }
-                else if (item.getItemId() == R.id.menuRecords){
+                } else if (item.getItemId() == R.id.menuRecords) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new RecordsFragment());
                     fragmentTransaction.commit();
-                }
-                else if (item.getItemId() == R.id.menuCategories){
+                } else if (item.getItemId() == R.id.menuKnowledgeCentre) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new KnowledgeCentreFragment());
                     fragmentTransaction.commit();
-                }
-                else if (item.getItemId() == R.id.menuAboutUs){
+                } else if (item.getItemId() == R.id.menuChildList) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new ChildListFragment());
                     fragmentTransaction.commit();
-                }
-                else {
+                } else if (item.getItemId() == R.id.menuDDrProfile) {
+                    FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                    fragmentTransaction.replace(R.id.frameLayout, new DoctorProfileFragment());
+                    fragmentTransaction.commit();
+                } else {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.replace(R.id.frameLayout, new PrivacyPolicyFragment());
                     fragmentTransaction.commit();

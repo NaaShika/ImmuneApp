@@ -24,7 +24,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".ChatActivity" />
         <activity android:name=".ChatMessage" />
-        <activity android:name=".ChldView"></activity>
+        <activity android:name=".ChldView" />
+        <activity android:name=".Fragments.DoctorProfileFragment"></activity>
     </application>
 
 </manifest>
