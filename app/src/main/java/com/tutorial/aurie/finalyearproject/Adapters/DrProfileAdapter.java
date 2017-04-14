@@ -28,6 +28,11 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
     private Activity context;
     private int resource;
 
+    @Override
+    public int getCount() {
+        return doctorProfileMessages.size();
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -50,7 +55,10 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
         return convertView;
     }
 
-    public DrProfileAdapter(@NonNull Context context, @LayoutRes int resource, List<DoctorProfileMessage> doctorProfileMessages) {
+    public DrProfileAdapter(@NonNull Activity context, @LayoutRes int resource, List<DoctorProfileMessage> doctorProfileMessages) {
         super(context, resource);
+        this.doctorProfileMessages = doctorProfileMessages;
+        this.context = context;
+        this.resource = resource;
     }
 }

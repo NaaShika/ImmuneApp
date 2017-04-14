@@ -26,9 +26,12 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
     private Activity context;
     private int resource;
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public int getCount() {
+        return childMessages.size();
+    }
+
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         if (convertView == null){
             LayoutInflater layoutInflater = context.getLayoutInflater();
@@ -49,8 +52,10 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
         return convertView;
     }
 
-    public GridAdapter(@NonNull Context context, @LayoutRes int resource, List<ChildMessage> childMessages) {
+    public GridAdapter(@NonNull Activity context, @LayoutRes int resource, List<ChildMessage> childMessages) {
         super(context, resource);
         this.childMessages = childMessages;
+        this.context = context;
+        this.resource = resource;
     }
 }

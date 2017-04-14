@@ -24,6 +24,8 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        /**
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.homeToolBar);
         final NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
         final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.activity_home);
@@ -70,6 +72,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        navigationView.getMenu().performIdentifierAction(R.id.menuProfile, 0);
+        navigationView.getMenu().performIdentifierAction(R.id.menuProfile, 0);**/
     }
 }
