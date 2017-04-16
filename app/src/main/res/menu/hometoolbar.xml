@@ -7,35 +7,40 @@
         <item
             android:id="@+id/menuChildList"
             app:showAsAction="always"
-            android:title="Child List" />
+            android:title="Child List"
+            android:icon="@drawable/child_icon"
+            />
         <item
             android:id="@+id/menuDDrProfile"
-            android:title="Doctor Profile" />
+            android:title="Doctor Profile"
+            android:icon="@drawable/medical-specialist"
+            />
         <item
             android:id="@+id/menuSchedule"
-            android:title="Schedule" />
+            android:title="Schedule"
+            android:icon="@drawable/ic_schedule_black_24dp"
+            />
 
         <item
             android:id="@+id/menuKnowledgeCentre"
-            android:title="Knowledge Centre" />
+            android:title="Knowledge Centre"
+            android:icon="@drawable/ic_info_black_24dp"
+            />
 
         <item
             android:id="@+id/menuRecords"
-            android:title="Records" />
+            android:title="Records"
+            android:icon="@drawable/record"
+            />
         <item
             android:id="@+id/menuEmergencyContacts"
-            android:title="Emergency Contacts" />
+            android:title="Emergency Contacts"
+            android:icon="@drawable/emergency-call"
+
+            />
 
     </group>
 
-    <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/menuAboutUs"
-            android:title="About Us" />
-
-
-    </group>
 
 
 
