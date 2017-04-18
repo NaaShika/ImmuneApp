@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context="com.tutorial.aurie.finalyearproject.DoctorProfile">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayoutImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
-        <com.meg7.widget.RectangleImageView
-            android:id="@+id/rectangleImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/mother_child"
-            android:scaleType="centerCrop"
-            android:layout_margin="5dp"
-            />
-    </RelativeLayout>
+    <com.meg7.widget.RectangleImageView
+        android:id="@+id/rectangleImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mother_child" />
 
 
     <LinearLayout
         android:id="@+id/linearLayoutDrProf"
-        android:layout_toRightOf="@+id/relativeLayoutImage"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
-        android:padding="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rectangleImageView"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+      >
 
         <TextView
             android:id="@+id/textviewDrName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Name"
-            android:textSize="24sp"
             android:textColor="@color/colorBlack"
+            android:textSize="24sp"
 
             />
 
@@ -42,35 +40,32 @@
             android:id="@+id/textviewSpeciality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorBlack"
             android:text="General Practitioner"
-            android:textSize="14sp"
-            />
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayoutDrReach"
-        android:layout_below="@+id/relativeLayoutImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayoutDrProf"
         android:orientation="horizontal"
-        android:weightSum="3"
-        >
+        android:weightSum="3">
 
         <ImageView
             android:id="@+id/imageViewCallDr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_call_black_24dp"
             android:layout_weight="1"
-            />
+            android:src="@drawable/ic_call_black_24dp" />
 
         <ImageView
             android:id="@+id/imageViewChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_sms_black_24dp"
             android:layout_weight="1"
+            android:src="@drawable/ic_sms_black_24dp"
 
             />
 
@@ -78,21 +73,28 @@
             android:id="@+id/imageViewEmailDr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_email_black_24dp"
             android:layout_weight="1"
+            android:src="@drawable/ic_email_black_24dp"
 
             />
 
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/viewLineOne"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+
+    <TextView
+        android:id="@+id/textviewSpecialityDescription"
         android:layout_below="@+id/linearLayoutDrReach"
-        android:layout_margin="5dp"
-        android:alpha="0.5"
-        android:background="@color/colorGrey" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="General Practioner : Iauhnddoihonihfuhhiaifhihahiihaihioahnioghio"
+        android:maxLines="5"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        />
+
+
+
+
 
 </RelativeLayout>

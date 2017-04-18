@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.tutorial.aurie.finalyearproject.FragmentOne;
-import com.tutorial.aurie.finalyearproject.FragmentThree;
 import com.tutorial.aurie.finalyearproject.FragmentTwo;
 
 /**

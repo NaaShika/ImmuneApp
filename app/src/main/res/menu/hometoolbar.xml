@@ -13,7 +13,7 @@
         <item
             android:id="@+id/menuDDrProfile"
             android:title="Doctor Profile"
-            android:icon="@drawable/medical-specialist"
+            android:icon="@drawable/medical_specialist"
             />
         <item
             android:id="@+id/menuSchedule"
@@ -35,7 +35,7 @@
         <item
             android:id="@+id/menuEmergencyContacts"
             android:title="Emergency Contacts"
-            android:icon="@drawable/emergency-call"
+            android:icon="@drawable/emergency_call"
 
             />
 
