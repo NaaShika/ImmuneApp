@@ -4,16 +4,27 @@
     android:id="@+id/activity_fragment_one"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorLimePrimary"
+    android:padding="10dp"
     tools:context="com.tutorial.aurie.finalyearproject.FragmentOne">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="We got a code name: YALE. It's a pretty cool name init"
-        android:textSize="30sp"
-        android:maxLines="2"
-        android:gravity="center_horizontal"
-        android:layout_centerInParent="true"
-        />
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+
+        <ListView
+            android:id="@+id/listViewNews"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:divider="@color/colorLimePrimary"
+            android:dividerHeight="10dp" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

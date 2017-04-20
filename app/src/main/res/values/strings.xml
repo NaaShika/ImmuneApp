@@ -16,6 +16,11 @@
     <string name="F">Female</string>
 
     <string name="specialty">General Practitioner</string>
+    <string name="meeting_times">Meeting Times</string>
+
+    <string name="news">Study shows riding a bike to work can cut the risk of cancer</string>
+    <string name="news_time">8:00am</string>
+    <string name="news_date">April 20,2017</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

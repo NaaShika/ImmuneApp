@@ -28,7 +28,7 @@ public class FragmentTwo extends Fragment {
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.doctor_profile_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity_fragment_two, container, false);
         ListView listView = (ListView) view.findViewById(R.id.listViewDrProfile);
         ImageView imageView = (ImageView) view.findViewById(R.id.rectangleImageView);
         ImageView imageViewChat = (ImageView) view.findViewById(R.id.imageViewChat);
@@ -45,22 +45,6 @@ public class FragmentTwo extends Fragment {
         DrProfileAdapter drProfileAdapter = new DrProfileAdapter(getActivity(), R.layout.doctor_profile_view, doctorProfileMessages);
         listView.setAdapter(drProfileAdapter);
 
-
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DoctorProfile.class);
-                startActivity(intent);
-            }
-        });
-
-        imageViewChat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentChat = new Intent(getActivity(), ChatMessage.class);
-                startActivity(intentChat);
-            }
-        });
 
         return view;
     }

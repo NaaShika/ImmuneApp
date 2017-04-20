@@ -5,11 +5,19 @@
     <group android:checkableBehavior="single">
 
         <item
+            android:id="@+id/menuStarred"
+            app:showAsAction="always"
+            android:title="Star"
+            android:icon="@drawable/ic_star"
+            />
+
+        <item
             android:id="@+id/menuChildList"
             app:showAsAction="always"
             android:title="Child List"
             android:icon="@drawable/child_icon"
             />
+
         <item
             android:id="@+id/menuDDrProfile"
             android:title="Doctor Profile"
