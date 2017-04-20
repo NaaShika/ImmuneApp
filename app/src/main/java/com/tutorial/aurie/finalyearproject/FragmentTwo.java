@@ -29,9 +29,7 @@ public class FragmentTwo extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_fragment_two, container, false);
-        ListView listView = (ListView) view.findViewById(R.id.listViewDrProfile);
-        ImageView imageView = (ImageView) view.findViewById(R.id.rectangleImageView);
-        ImageView imageViewChat = (ImageView) view.findViewById(R.id.imageViewChat);
+        ListView listView = (ListView) view.findViewById(R.id.listView);
 
         DoctorProfileMessage doctorProfileMessageOne = new DoctorProfileMessage(R.drawable.mother_child, "Dr Dzidzor Nutakor", "General Practitioner");
         DoctorProfileMessage doctorProfileMessageTwo = new DoctorProfileMessage(R.drawable.mother_child, "Dr Charis Ashen", "Family Medicine");
@@ -46,6 +44,6 @@ public class FragmentTwo extends Fragment {
         listView.setAdapter(drProfileAdapter);
 
 
-        return view;
+        return listView;
     }
 }

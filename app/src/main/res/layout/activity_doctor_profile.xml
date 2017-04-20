@@ -71,7 +71,7 @@
             />
 
         <ImageView
-            android:id="@+id/imageViewChat"
+            android:id="@+id/imageViewDrImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_sms_black_24dp"
