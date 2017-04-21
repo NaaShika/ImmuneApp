@@ -32,6 +32,7 @@
 
 
     <TextView
+        android:id="@+id/textViewDocInfor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Medscape can be used by doctors, students and nurses alike. It provides information on various drugs and diseases. "
@@ -44,6 +45,7 @@
         />
 
     <TextView
+        android:id="@+id/textViewMeetingTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Meeting Times : 8:00 am - 4:00pm"
