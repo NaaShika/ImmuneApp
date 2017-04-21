@@ -11,9 +11,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.tutorial.aurie.finalyearproject.API.InformationDataProvider;
+import com.tutorial.aurie.finalyearproject.Interfaces.InformationInterface;
 import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
+import com.tutorial.aurie.finalyearproject.Objects.NewsObject;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class ChldView extends AppCompatActivity {
     private ImageView imageView;
@@ -30,7 +34,15 @@ public class ChldView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chld_view);
+        Log.e("Hello","URl");
+        InformationDataProvider informationDataProvider = new  InformationDataProvider(ChldView.this);
+        informationDataProvider.getInformation(new InformationInterface() {
+            @Override
+            public void getInformations(List<NewsObject> newsObjects) {
 
+
+            }
+        });
 
          imageView = (ImageView) findViewById(R.id.profileImageChild);
          editTextName = (EditText) findViewById(R.id.editTextChildName);
@@ -45,9 +57,6 @@ public class ChldView extends AppCompatActivity {
 
          checkBoxNotification = (CheckBox) findViewById(R.id.checkboxNotification);
          buttonSaveChild = (Button) findViewById(R.id.buttonSaveChild);
-
-
-
 
         buttonSaveChild.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +78,7 @@ public class ChldView extends AppCompatActivity {
                 Log.e("CHildNew", "onClick: " + String.valueOf(childMessage.retrieveAll().size()));
             }
         });
+
 
 
     }

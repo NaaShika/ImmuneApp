@@ -15,9 +15,8 @@ import io.realm.annotations.PrimaryKey;
 public class User extends RealmObject {
 
     public String name;
-    public String id;
     @PrimaryKey
-    public Long phoneNumber;
+    public String phoneNumber;
     public String password;
 
     public String getName() {
@@ -28,19 +27,12 @@ public class User extends RealmObject {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Long getPhoneNumber() {
+    public String  getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
+    public void setPhoneNumber(String  phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -52,15 +44,24 @@ public class User extends RealmObject {
         this.password = password;
     }
 
-    public void Save(DoctorProfileMessage DrProfile){
+    public User() {
+    }
+
+    public User(String name, String  phoneNumber, String password) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+    }
+
+    public void Save(User user) {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.copyToRealmOrUpdate(DrProfile);
+        realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();
     }
 
-    public List<DoctorProfileMessage> retrieveAll(){
+    public List<User> retrieveAll() {
         Realm realm = Realm.getDefaultInstance();
-        return realm.where(DoctorProfileMessage.class).findAll();
+        return realm.where(User.class).findAll();
     }
 }

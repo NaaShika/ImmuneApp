@@ -41,7 +41,7 @@ public class Signup extends AppCompatActivity {
         final Button buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
         final ProgressBar progressBar =(ProgressBar) findViewById(R.id.progressBar);
 
-        Realm realm = Realm.getDefaultInstance();
+        final Realm realm = Realm.getDefaultInstance();
 
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +83,11 @@ public class Signup extends AppCompatActivity {
                 Log.e("Print","checking");
 
                 String email = phoneNumber + "@immune.com";
+
+
+
+                User user = new User("Mr.Ludu","0208123045","ludumarried");
+               user.Save(user);
 
 
                /** mAuth.createUserWithEmailAndPassword(email, passWord)
