@@ -55,33 +55,22 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <CheckBox
-        android:id="@+id/checkboxFemale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextChildAge"
-        android:text="F"
-        android:textColor="@color/colorDeepGreen"
-        android:textSize="24sp"
-        android:layout_margin="10dp"
 
-        />
+<Spinner
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/editTextChildAge"
+    android:layout_margin="10dp"
+    android:id="@+id/spinnerGender"
+    android:entries="@array/gender_array"
+    android:prompt="@string/gender_prompt">
 
-    <CheckBox
-        android:id="@+id/checkboxMale"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextChildAge"
-        android:layout_toRightOf="@+id/checkboxFemale"
-        android:text="M"
-        android:textColor="@color/colorDeepGreen"
-        android:textSize="24sp"
-        android:layout_margin="10dp"
-        />
+
+</Spinner>
 
     <EditText
         android:id="@+id/editTextParentNumber"
-        android:layout_toRightOf="@+id/checkboxMale"
+        android:layout_toRightOf="@+id/spinnerGender"
         android:layout_below="@+id/editTextChildAge"
         android:layout_width="170dp"
         android:layout_height="wrap_content"

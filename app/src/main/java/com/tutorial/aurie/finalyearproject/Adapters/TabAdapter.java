@@ -36,7 +36,7 @@ public class TabAdapter extends FragmentPagerAdapter {
         } else if (position == 1) {
             return "Chats";
         } else {
-            return "Schedule";
+            return "ScheduleDose";
         }
     }
 }

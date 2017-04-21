@@ -63,6 +63,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_call_black_24dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
             />
 
         <ImageView
@@ -71,6 +74,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_sms_black_24dp"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
 
             />
 
@@ -80,7 +86,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_email_black_24dp"
             android:layout_weight="1"
-
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onClick"
             />
 
 

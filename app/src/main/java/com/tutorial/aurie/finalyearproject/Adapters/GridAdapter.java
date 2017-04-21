@@ -2,6 +2,7 @@ package com.tutorial.aurie.finalyearproject.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.koushikdutta.async.future.FutureCallback;
+import com.koushikdutta.ion.Ion;
 import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
 import com.tutorial.aurie.finalyearproject.R;
 
@@ -42,12 +45,25 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
         TextView textViewName = (TextView) convertView.findViewById(R.id.gridviewName);
         TextView textViewAge = (TextView)convertView.findViewById(R.id.gridviewAge);
         TextView textViewGender = (TextView)convertView.findViewById(R.id.gridviewGender);
-        ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.gridviewImage);
+        final ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.gridviewImage);
 
         textViewAge.setText(childMessage.getAge());
         textViewName.setText(childMessage.getChildName());
         textViewGender.setText(childMessage.getGender());
-        imageViewProfilePic.setImageResource(childMessage.getProfileImage());
+        /** imageViewProfilePic.setImageResource(childMessage.getProfileImage());//
+         *
+         */
+        Ion.with(context)
+                .load(childMessage.getProfileImage())
+                .asBitmap()
+                .setCallback(new FutureCallback<Bitmap>() {
+                    @Override
+                    public void onCompleted(Exception e, Bitmap result) {
+                        if (e == null && result!= null){
+                            imageViewProfilePic.setImageBitmap(result);
+                        }
+                    }
+                });
 
         return convertView;
     }

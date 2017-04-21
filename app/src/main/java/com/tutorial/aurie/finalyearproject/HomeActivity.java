@@ -45,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuSchedule) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.frameLayout, new Schedule());
+                    fragmentTransaction.replace(R.id.frameLayout, new ScheduleDose());
                     fragmentTransaction.commit();
                 } else if (item.getItemId() == R.id.menuRecords) {
                     FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

@@ -30,6 +30,8 @@ public class FragmentTwo extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_fragment_two, container, false);
         ListView listView = (ListView) view.findViewById(R.id.listView);
+        ImageView imageView = (ImageView) view.findViewById(R.id.rectangleImageView);
+        ImageView imageViewChatIcon = (ImageView) view.findViewById(R.id.imageViewChatImage);
 
         DoctorProfileMessage doctorProfileMessageOne = new DoctorProfileMessage(R.drawable.mother_child, "Dr Dzidzor Nutakor", "General Practitioner");
         DoctorProfileMessage doctorProfileMessageTwo = new DoctorProfileMessage(R.drawable.mother_child, "Dr Charis Ashen", "Family Medicine");
@@ -42,6 +44,8 @@ public class FragmentTwo extends Fragment {
 
         DrProfileAdapter drProfileAdapter = new DrProfileAdapter(getActivity(), R.layout.doctor_profile_view, doctorProfileMessages);
         listView.setAdapter(drProfileAdapter);
+
+
 
 
         return listView;

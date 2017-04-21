@@ -31,6 +31,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/linearLayoutChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -64,6 +65,7 @@
     </LinearLayout>
 
     <Button
+        android:layout_below="@+id/linearLayoutMainGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="bottom"

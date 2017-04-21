@@ -54,6 +54,6 @@ public class FragmentOne extends Fragment {
         listView.setAdapter(newsAdapter);
 
 
-        return view;
+        return listView;
     }
 }

@@ -1,6 +1,7 @@
 package com.tutorial.aurie.finalyearproject.Adapters;
 
 import android.app.Activity;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.tutorial.aurie.finalyearproject.Objects.DoctorProfileMessage;
 import com.tutorial.aurie.finalyearproject.Objects.NewsObject;
 import com.tutorial.aurie.finalyearproject.R;
 
@@ -24,6 +26,7 @@ public class NewsAdapter extends ArrayAdapter<NewsObject> {
     private int resource;
     private List<NewsObject> newsObjects;
 
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -31,24 +34,27 @@ public class NewsAdapter extends ArrayAdapter<NewsObject> {
             LayoutInflater layoutInflater = context.getLayoutInflater();
             convertView = layoutInflater.inflate(resource,parent,false);
         }
-        NewsObject newsObject = getItem(position);
-        TextView textViewTitle =(TextView) convertView.findViewById(R.id.textviewTitle);
-        TextView textViewTime =(TextView) convertView.findViewById(R.id.textviewTime);
-        TextView textViewDate =(TextView) convertView.findViewById(R.id.textviewDate);
 
-        textViewDate.setText(textViewDate.getText());
-        textViewTime.setText(textViewTime.getText());
-        textViewTitle.setText(textViewTitle.getText());
+       NewsObject newsObject = newsObjects.get(position);
+        TextView textViewDate = (TextView)convertView.findViewById(R.id.textviewDate);
+        TextView textViewTime = (TextView)convertView.findViewById(R.id.textviewTime);
+        TextView textViewTitle = (TextView)convertView.findViewById(R.id.textviewTitle);
+
+        textViewDate.setText(newsObject.getDate());
+        textViewTime.setText(newsObject.getTime());
+        textViewTitle.setText(newsObject.getTitle());
+
 
 
         return convertView;
 
     }
 
-    public NewsAdapter(Activity context, int resource, List<NewsObject> newsObjectList){
+    public NewsAdapter(@NonNull Activity context, @LayoutRes int resource, List<NewsObject> newsObjects) {
         super(context, resource);
-        this.context =context;
-        this.resource =resource;
+        this.newsObjects = newsObjects;
+        this.context = context;
+        this.resource = resource;
     }
 
 }
