@@ -1,5 +1,10 @@
 package com.tutorial.aurie.finalyearproject;
 
+import com.tutorial.aurie.finalyearproject.Objects.DoctorProfileMessage;
+
+import java.util.List;
+
+import io.realm.Realm;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -45,5 +50,17 @@ public class User extends RealmObject {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void Save(DoctorProfileMessage DrProfile){
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(DrProfile);
+        realm.commitTransaction();
+    }
+
+    public List<DoctorProfileMessage> retrieveAll(){
+        Realm realm = Realm.getDefaultInstance();
+        return realm.where(DoctorProfileMessage.class).findAll();
     }
 }

@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import io.realm.Realm;
+
 
 public class Signup extends AppCompatActivity {
 
@@ -38,6 +40,9 @@ public class Signup extends AppCompatActivity {
         TextView textViewShortcutToLogin = (TextView) findViewById(R.id.textViewShortcutToLogIn);
         final Button buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
         final ProgressBar progressBar =(ProgressBar) findViewById(R.id.progressBar);
+
+        Realm realm = Realm.getDefaultInstance();
+
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override

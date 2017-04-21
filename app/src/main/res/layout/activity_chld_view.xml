@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tutorial.aurie.finalyearproject.ChldView">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/profileImageChild"
         android:layout_width="150dp"
         android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/appdemoimage"
         app:civ_border_color="@color/colorGrey"
         app:civ_border_width="4dp"
         app:civ_shadow="true"
         app:civ_shadow_color="#8BC34A"
-        app:civ_shadow_radius="10"
-        android:layout_centerHorizontal="true"
-        />
+        app:civ_shadow_radius="10" />
 
     <EditText
         android:id="@+id/editTextChildName"
-        android:layout_below="@+id/profileImageChild"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
-        android:textColorHint="@color/colorDeepGreen"
-        android:inputType="text"
+        android:layout_below="@+id/profileImageChild"
         android:layout_margin="10dp"
-        />
+        android:hint="Name"
+        android:inputType="text"
+        android:textColorHint="@color/colorDeepGreen" />
 
     <EditText
         android:id="@+id/editTextChildAge"
-        android:layout_below="@+id/editTextChildName"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:hint="Age"
-        android:textColorHint="@color/colorDeepGreen"
-        android:inputType="number"
+        android:layout_below="@+id/editTextChildName"
         android:layout_margin="10dp"
-        />
+        android:hint="Age"
+        android:inputType="number"
+        android:textColorHint="@color/colorDeepGreen" />
 
     <EditText
         android:id="@+id/editTextChildDOB"
@@ -48,7 +49,7 @@
         android:layout_below="@+id/editTextChildName"
         android:layout_centerHorizontal="true"
         android:background="@color/blueGray200"
-        android:hint="Select Date..."
+        android:hint="Date Of Birth"
         android:padding="15dp"
         android:textColor="#897"
         android:textColorHint="@color/colorDeepGreen"
@@ -56,40 +57,40 @@
         android:textStyle="bold" />
 
 
-<Spinner
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/editTextChildAge"
-    android:layout_margin="10dp"
-    android:id="@+id/spinnerGender"
-    android:entries="@array/gender_array"
-    android:prompt="@string/gender_prompt">
+        <EditText
+            android:id="@+id/editTextGender"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextChildAge"
+            android:layout_margin="10dp"
+            android:hint="Gender"
+            android:inputType="textAutoComplete"
+            android:textColorHint="@color/colorDeepGreen" />
 
 
-</Spinner>
 
     <EditText
         android:id="@+id/editTextParentNumber"
-        android:layout_toRightOf="@+id/spinnerGender"
-        android:layout_below="@+id/editTextChildAge"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:hint="Phone Number"
-        android:textColorHint="@color/colorDeepGreen"
-        android:inputType="number"
+        android:layout_below="@+id/editTextChildAge"
         android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/editTextGender"
+        android:hint="Phone Number"
+        android:inputType="number"
+        android:textColorHint="@color/colorDeepGreen"
 
         />
 
     <EditText
         android:id="@+id/editTextParentEmail"
-        android:layout_below="@+id/editTextParentNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textColorHint="@color/colorDeepGreen"
-        android:inputType="number"
+        android:layout_below="@+id/editTextParentNumber"
         android:layout_margin="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/colorDeepGreen"
 
         />
 
@@ -98,23 +99,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextParentEmail"
-        android:layout_toRightOf="@+id/checkboxFemale"
+        android:layout_margin="10dp"
         android:text="Notifications"
         android:textColor="@color/colorDeepGreen"
-        android:textSize="24sp"
-        android:layout_margin="10dp"
-        />
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/buttonSaveChild"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkboxNotification"
+        android:layout_margin="20dp"
         android:text="Save"
         android:textColor="@color/colorDeepGreen"
-        android:textSize="24sp"
-        android:layout_margin="20dp"
-        />
+        android:textSize="24sp" />
+    </RelativeLayout>
 
-
-</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

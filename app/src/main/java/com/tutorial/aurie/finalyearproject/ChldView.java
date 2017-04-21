@@ -22,7 +22,7 @@ public class ChldView extends AppCompatActivity {
     private EditText editTextDOB;
     private EditText editTextParentNumber;
     private EditText editTextParentEmail,phone,parentName;
-    private Spinner spinnerGender;
+    private EditText editTextGender;
     private CheckBox checkBoxNotification;
     private Button buttonSaveChild;
 
@@ -31,22 +31,18 @@ public class ChldView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chld_view);
 
+
          imageView = (ImageView) findViewById(R.id.profileImageChild);
          editTextName = (EditText) findViewById(R.id.editTextChildName);
          editTextAge = (EditText) findViewById(R.id.editTextChildAge);
          editTextDOB = (EditText) findViewById(R.id.editTextChildDOB);
          editTextParentNumber = (EditText) findViewById(R.id.editTextParentNumber);
          editTextParentEmail = (EditText) findViewById(R.id.editTextParentEmail);
+         editTextParentEmail = (EditText) findViewById(R.id.editTextParentEmail);
+        editTextGender= (EditText) findViewById(R.id.editTextGender);
         phone = (EditText) findViewById(R.id.editTextParentNumber);
 
-        Spinner dropdown = (Spinner)findViewById(R.id.spinnerGender);
-        String[] items = new String[]{"M", "F" };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_chld_view, items);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        dropdown.setAdapter(adapter);
 
-
-        spinnerGender = (Spinner) findViewById(R.id.spinnerGender);
          checkBoxNotification = (CheckBox) findViewById(R.id.checkboxNotification);
          buttonSaveChild = (Button) findViewById(R.id.buttonSaveChild);
 
@@ -61,8 +57,10 @@ public class ChldView extends AppCompatActivity {
                 String dob = editTextDOB.getText().toString();
                 String number = editTextParentNumber.getText().toString();
                 String email = editTextParentEmail.getText().toString();
-                String gender = String.valueOf(spinnerGender.getSelectedItem());
+                String gender = String.valueOf(editTextGender.getText());
                 boolean notfication = checkBoxNotification.isEnabled();
+
+                Log.e("Hello","URl");
 
                 checkBoxNotification.getText().toString();
                 String imageurl ="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTCQ1cCz5YKnxSITEUjqtBqaST_m141GadQcL_clqTsM6axS1Fh";
