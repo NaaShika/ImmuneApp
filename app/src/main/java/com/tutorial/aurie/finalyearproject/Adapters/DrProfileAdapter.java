@@ -65,7 +65,7 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
             }
         });
 
-        imageViewChatImage.setOnClickListener(new View.OnClickListener() {
+        imageViewCallDr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(context, DoctorProfile.class));
