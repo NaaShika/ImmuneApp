@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import io.realm.Realm;
 
@@ -33,7 +34,6 @@ public class Signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
 
-        ImageView imageViewDemoImage = (ImageView) findViewById(R.id.imageViewAppDemoImage);
         final EditText editTextFullname = (EditText) findViewById(R.id.editTextFullname);
         final EditText editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         final EditText editTextPhoneNumber = (EditText) findViewById(R.id.editTextPhoneNumber);
@@ -84,13 +84,10 @@ public class Signup extends AppCompatActivity {
 
                 String email = phoneNumber + "@immune.com";
 
+                Log.e("Print","runningagain");
 
 
-                User user = new User("Mr.Ludu","0208123045","ludumarried");
-               user.Save(user);
-
-
-               /** mAuth.createUserWithEmailAndPassword(email, passWord)
+                mAuth.createUserWithEmailAndPassword(email, passWord)
                         .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -105,15 +102,18 @@ public class Signup extends AppCompatActivity {
 
                                 Log.e("Print","how about here");
 
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(Signup.this,"Failed to create account. Try again",Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
+                                   startActivity(new Intent(Signup.this, TabActivity.class));
+                                    finish();
                                 }else {
                                     Log.e("Print", "Can't figure it out");
                                     startActivity(new Intent(Signup.this, TabActivity.class));
                                 }
 
                             }
-                        } ); **/
+                        } );
+
+
 
             }
 
@@ -125,6 +125,8 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Intent loginIntent = new Intent(Signup.this, Login.class);
+                startActivity(loginIntent);
             }
         });
     }

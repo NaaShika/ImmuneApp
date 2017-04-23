@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
         final EditText editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         final Button buttonLoginBtn = (Button) findViewById(R.id.buttonLoginBtn);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
-        TextView textViewShortcutToLogin = (TextView) findViewById(R.id.textViewShortcutToSignUp);
+        final TextView textViewShortcutToSignUp = (TextView) findViewById(R.id.textViewShortcutToSignUp);
 
         buttonLoginBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -63,20 +63,32 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 Log.d("LoggedIn", "signInWithEmail:onComplete:" + task.isSuccessful());
 
+                                progressBar.setVisibility(View.GONE);
+
+
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
-                                if (!task.isSuccessful()) {
-                                    Log.w("Not logged", "signInWithEmail:failed", task.getException());
-                                    Toast.makeText(Login.this, "Logged In", Toast.LENGTH_SHORT).show();
+                                if (task.isSuccessful()) {
+
+                                    Intent intent = new Intent(Login.this, TabActivity.class);
+                                    startActivity(intent);
+
                                 } else {
-                                    startActivity(new Intent(Login.this, TabActivity.class));
+                                   Toast.makeText(Login.this,"not logged In", Toast.LENGTH_LONG).show();
                                 }
                             }
 
 
             });
 
+                textViewShortcutToSignUp.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent signupIntent = new Intent(Login.this, Signup.class);
+                        startActivity(signupIntent);
+                    }
+                });
 
         }
     });
