@@ -49,7 +49,7 @@ public class Signup extends AppCompatActivity {
         final Button buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-       /** final Realm realm = Realm.getDefaultInstance();**/
+         final Realm realm = Realm.getDefaultInstance();
 
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
@@ -81,76 +81,66 @@ public class Signup extends AppCompatActivity {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    startActivity(new Intent(Signup.this, TabActivity.class));
-                }
+                    final User user = new User(fullName, phoneNumber, passWord);
 
-                final User user = new User(fullName,phoneNumber,passWord);
+                    Log.e("Print", "running");
 
-                Log.e("Print", "running");
+                    progressBar.setVisibility(View.VISIBLE);
+                    buttonSignUp.setEnabled(false);
+                    Log.e("Print", "checking");
 
-                progressBar.setVisibility(View.VISIBLE);
-                // to disable the button
-                buttonSignUp.setEnabled(false);
-                Log.e("Print", "checking");
+                    String email = phoneNumber + "@immune.com";
 
-                String email = phoneNumber + "@immune.com";
+                    Log.e("Print", "runningagain");
 
-                Log.e("Print", "runningagain");
+                    mAuth.createUserWithEmailAndPassword(email, passWord)
+                            .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    // to enable the button again --true
+                                    buttonSignUp.setEnabled(true);
 
+                                    Log.e("Print", "how about here");
 
-                mAuth.createUserWithEmailAndPassword(email, passWord)
-                        .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                // to enable the button again --true
-                                buttonSignUp.setEnabled(true);
+                                    if (task.isSuccessful()) {
+                                        UserInfo userInfo = task.getResult().getUser();
 
-                                Log.e("Print", "how about here");
-
-                                if (task.isSuccessful()) {
-                                    UserInfo userInfo =task.getResult().getUser();
-
-                                    DatabaseReference currentUser = mDatabase.child(id);
-                                    currentUser.child("Users").setValue(user, new DatabaseReference.CompletionListener() {
-                                        @Override
-                                        public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-                                            if (databaseError != null){
-                                                Log.e("Error", databaseError.toString());
+                                        DatabaseReference currentUser = mDatabase.child(id);
+                                        currentUser.child("Users").setValue(user, new DatabaseReference.CompletionListener() {
+                                            @Override
+                                            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                                if (databaseError != null) {
+                                                    Log.e("Error", databaseError.toString());
+                                                }
                                             }
-                                        }
 
-                                    });
+                                        });
 
-                                    Toast.makeText(Signup.this, "SignUp successful", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Signup.this, "SignUp successful", Toast.LENGTH_LONG).show();
 
-                                    startActivity(new Intent(Signup.this, TabActivity.class));
-                                    finish();
+                                        startActivity(new Intent(Signup.this, TabActivity.class));
+                                        finish();
 
 
-                                } else {
-                                    Log.e("Print", task.getException().toString());
-                                    Toast.makeText(Signup.this, "SignUp not successful", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Log.e("Print", task.getException().toString());
+                                        Toast.makeText(Signup.this, "SignUp not successful", Toast.LENGTH_LONG).show();
+
+                                    }
+                                    progressBar.setVisibility(View.GONE);
 
                                 }
-                                progressBar.setVisibility(View.GONE);
+                            });
 
-                            }
-                        });
+
+                }
 
 
             }
 
+            ;
 
-        });
 
-        Log.e("Print", "But i'll get it");
-        textViewShortcutToLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent loginIntent = new Intent(Signup.this, Login.class);
-                startActivity(loginIntent);
-            }
         });
     }
 }

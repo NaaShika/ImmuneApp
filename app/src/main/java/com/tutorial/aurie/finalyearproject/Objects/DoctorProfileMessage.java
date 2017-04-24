@@ -10,12 +10,21 @@ import io.realm.annotations.PrimaryKey;
  * Created by aurie on 13/04/2017.
  */
 
-public class DoctorProfileMessage extends RealmObject{
+public class DoctorProfileMessage extends RealmObject {
     @PrimaryKey
     private String ID;
     public int ProfileImage;
     public String DoctorName;
     public String Speciality;
+    public String PhoneNumber;
+
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
 
     public int getProfileImage() {
         return ProfileImage;
@@ -44,20 +53,22 @@ public class DoctorProfileMessage extends RealmObject{
     public DoctorProfileMessage() {
     }
 
-    public DoctorProfileMessage(int profileImage, String doctorName, String speciality) {
+    public DoctorProfileMessage(int profileImage, String doctorName, String speciality, String phoneNumber) {
         ProfileImage = profileImage;
         DoctorName = doctorName;
         Speciality = speciality;
+        PhoneNumber = phoneNumber;
+
     }
 
-    public void Save(DoctorProfileMessage DrProfile){
+    public void Save(DoctorProfileMessage DrProfile) {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(DrProfile);
         realm.commitTransaction();
     }
 
-    public List<DoctorProfileMessage> retrieveAll(){
+    public List<DoctorProfileMessage> retrieveAll() {
         Realm realm = Realm.getDefaultInstance();
         return realm.where(DoctorProfileMessage.class).findAll();
     }

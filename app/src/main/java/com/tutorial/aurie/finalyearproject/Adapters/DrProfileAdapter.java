@@ -49,9 +49,10 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
             convertView = layoutInflater.inflate(resource, parent, false);
         }
 
-        DoctorProfileMessage doctorProfileMessage = doctorProfileMessages.get(position);
+        final DoctorProfileMessage doctorProfileMessage = doctorProfileMessages.get(position);
         TextView textViewName = (TextView)convertView.findViewById(R.id.textviewDrName);
         TextView textViewSpeciality = (TextView)convertView.findViewById(R.id.textviewSpeciality);
+        TextView textViewProfilePhoneNumber = (TextView)convertView.findViewById(R.id.textViewProfilePhoneNumber);
         ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.rectangleImageView);
         ImageView imageViewChatImage = (ImageView) convertView.findViewById(R.id.imageViewChatImage);
         ImageView imageViewCallDr = (ImageView) convertView.findViewById(R.id.imageViewCallDr);
@@ -72,6 +73,8 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
         imageViewCallDr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                context.startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", doctorProfileMessage.getPhoneNumber(), null)));
 
 
             }

@@ -59,6 +59,17 @@
         android:gravity="center_horizontal"
         android:padding="10dp"
         />
+
+    <TextView
+        android:id="@+id/textViewProfilePhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PhoneNumber: 0244142073 "
+        android:textSize="24sp"
+        android:textColor="@color/colorDarkGrey"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        />
     <LinearLayout
         android:id="@+id/linearLayoutDrReach"
         android:layout_below="@+id/relativeLayoutImage"

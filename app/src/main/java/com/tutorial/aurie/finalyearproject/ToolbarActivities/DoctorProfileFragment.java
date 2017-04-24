@@ -28,10 +28,10 @@ public class DoctorProfileFragment extends Fragment{
         View view= inflater.inflate(R.layout.activity_fragment_two,container,false);
         ListView listView = (ListView)view.findViewById(R.id.listViewDrProfile) ;
 
-        DoctorProfileMessage doctorProfileMessageOne =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Dzidzor Nutakor", "General Practitioner");
-        DoctorProfileMessage doctorProfileMessageTwo =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Charis Ashen", "Family Medicine");
-        DoctorProfileMessage doctorProfileMessageThree =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Mavis Appau", "Urgent Care");
-        DoctorProfileMessage doctorProfileMessageFour =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Mavis Appau", "Urgent Care");
+        DoctorProfileMessage doctorProfileMessageOne =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Dzidzor Nutakor", "General Practitioner","0249668268");
+        DoctorProfileMessage doctorProfileMessageTwo =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Charis Ashen", "Family Medicine", "0249668268");
+        DoctorProfileMessage doctorProfileMessageThree =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Mavis Appau", "Urgent Care", "0249668268");
+        DoctorProfileMessage doctorProfileMessageFour =  new DoctorProfileMessage(R.drawable.mother_child,"Dr Mavis Appau", "Urgent Care", "0249668268");
 
         List<DoctorProfileMessage> doctorProfileMessages =new ArrayList<>();
         doctorProfileMessages.add(doctorProfileMessageOne);
