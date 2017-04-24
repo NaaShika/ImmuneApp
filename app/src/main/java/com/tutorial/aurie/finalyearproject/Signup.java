@@ -18,6 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Calendar;
 
 import io.realm.Realm;
 
@@ -26,6 +32,7 @@ public class Signup extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -33,6 +40,7 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         final EditText editTextFullname = (EditText) findViewById(R.id.editTextFullname);
         final EditText editTextPassword = (EditText) findViewById(R.id.editTextPassword);
@@ -41,7 +49,7 @@ public class Signup extends AppCompatActivity {
         final Button buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-        final Realm realm = Realm.getDefaultInstance();
+       /** final Realm realm = Realm.getDefaultInstance();**/
 
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +59,7 @@ public class Signup extends AppCompatActivity {
                 String fullName = editTextFullname.getText().toString();
                 String phoneNumber = editTextPhoneNumber.getText().toString();
                 String passWord = editTextPassword.getText().toString();
+                final String id = String.valueOf(Calendar.getInstance().getTimeInMillis());
 
                 Log.e("Print", "Something here");
                 if (fullName.isEmpty()) {
@@ -75,6 +84,8 @@ public class Signup extends AppCompatActivity {
                     startActivity(new Intent(Signup.this, TabActivity.class));
                 }
 
+                final User user = new User(fullName,phoneNumber,passWord);
+
                 Log.e("Print", "running");
 
                 progressBar.setVisibility(View.VISIBLE);
@@ -93,17 +104,35 @@ public class Signup extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 // to enable the button again --true
                                 buttonSignUp.setEnabled(true);
-                                progressBar.setVisibility(View.GONE);
 
                                 Log.e("Print", "how about here");
 
                                 if (task.isSuccessful()) {
+                                    UserInfo userInfo =task.getResult().getUser();
+
+                                    DatabaseReference currentUser = mDatabase.child(id);
+                                    currentUser.child("Users").setValue(user, new DatabaseReference.CompletionListener() {
+                                        @Override
+                                        public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                            if (databaseError != null){
+                                                Log.e("Error", databaseError.toString());
+                                            }
+                                        }
+
+                                    });
+
+                                    Toast.makeText(Signup.this, "SignUp successful", Toast.LENGTH_LONG).show();
+
                                     startActivity(new Intent(Signup.this, TabActivity.class));
                                     finish();
+
+
                                 } else {
-                                    Log.e("Print", "Can't figure it out");
-                                    startActivity(new Intent(Signup.this, TabActivity.class));
+                                    Log.e("Print", task.getException().toString());
+                                    Toast.makeText(Signup.this, "SignUp not successful", Toast.LENGTH_LONG).show();
+
                                 }
+                                progressBar.setVisibility(View.GONE);
 
                             }
                         });

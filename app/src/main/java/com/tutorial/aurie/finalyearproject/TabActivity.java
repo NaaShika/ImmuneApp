@@ -71,7 +71,7 @@ public class TabActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.menuChildList){
-            startActivity(new Intent(TabActivity.this, ChildList.class));
+            startActivity(new Intent(TabActivity.this, ChildListNew.class));
             return true;
         }
 

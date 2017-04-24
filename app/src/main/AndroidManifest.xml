@@ -28,11 +28,10 @@
         <activity android:name=".ChldView"></activity>
         <activity android:name=".ToolbarActivities.ChildList" />
         <activity android:name=".ToolbarActivities.KnowledgeCentre" />
-        <activity android:name=".ToolbarActivities.Profile" />
         <activity android:name=".ToolbarActivities.Records" />
         <activity android:name=".ToolbarActivities.Schedule"></activity>
         <activity android:name=".DoctorProfile" />
-        <activity android:name=".ChildList"></activity>
+        <activity android:name=".ChildListNew" />
     </application>
 
 </manifest>

@@ -17,11 +17,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
 
 public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,7 @@ public class Login extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
                 buttonLoginBtn.setEnabled(false);
-                String email = fullName + "@immune.com";
+                final String email = fullName + "@immune.com";
 
                 mAuth.signInWithEmailAndPassword(email, passWord)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
@@ -65,17 +69,16 @@ public class Login extends AppCompatActivity {
 
                                 progressBar.setVisibility(View.GONE);
 
-
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
                                 if (task.isSuccessful()) {
+                                    UserInfo userInfo = task.getResult().getUser();
+                                    String email = userInfo.getEmail();
+                                    String id = userInfo.getUid();
 
                                     Intent intent = new Intent(Login.this, TabActivity.class);
                                     startActivity(intent);
 
                                 } else {
-                                   Toast.makeText(Login.this,"not logged In", Toast.LENGTH_LONG).show();
+                                   Toast.makeText(Login.this,"Your credentials do not exist ", Toast.LENGTH_LONG).show();
                                 }
                             }
 

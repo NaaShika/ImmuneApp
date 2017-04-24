@@ -2,6 +2,7 @@ package com.tutorial.aurie.finalyearproject.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -10,11 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
+import com.tutorial.aurie.finalyearproject.AddChild;
+import com.tutorial.aurie.finalyearproject.ChatMessage;
+import com.tutorial.aurie.finalyearproject.ChildListNew;
+import com.tutorial.aurie.finalyearproject.ChldView;
 import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
 import com.tutorial.aurie.finalyearproject.R;
 
@@ -45,6 +51,7 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
         TextView textViewName = (TextView) convertView.findViewById(R.id.gridviewName);
         TextView textViewAge = (TextView)convertView.findViewById(R.id.gridviewAge);
         TextView textViewGender = (TextView)convertView.findViewById(R.id.gridviewGender);
+        Button buttonAddChild = (Button) convertView.findViewById(R.id.buttonAddChild);
         final ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.gridviewImage);
 
         textViewAge.setText(childMessage.getAge());
@@ -64,6 +71,14 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
                         }
                     }
                 });
+
+        buttonAddChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, AddChild.class));
+
+            }
+        });
 
         return convertView;
     }
