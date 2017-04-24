@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity {
 
         ImageView imageViewDemoImage = (ImageView) findViewById(R.id.imageViewAppDemoImage);
         final EditText editTextFullname = (EditText) findViewById(R.id.editTextFullname);
+        final EditText editTextPhoneNumber = (EditText) findViewById(R.id.editTextPhoneNumber);
         final EditText editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         final Button buttonLoginBtn = (Button) findViewById(R.id.buttonLoginBtn);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
@@ -43,10 +44,10 @@ public class Login extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                String fullName = editTextFullname.getText().toString();
+                String phoneNumber= editTextPhoneNumber.getText().toString();
                 String passWord = editTextPassword.getText().toString();
 
-                if (fullName.isEmpty()) {
+                if (phoneNumber.isEmpty()) {
                     Toast.makeText(Login.this, "Please type your full name", Toast.LENGTH_LONG).show();
                     return;
                 } else if (passWord.isEmpty()) {
@@ -55,11 +56,13 @@ public class Login extends AppCompatActivity {
                 } else if (passWord.length() < 5) {
                     Toast.makeText(Login.this, "Type a stronger password", Toast.LENGTH_LONG).show();
                     return;
+                }else {
+
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
                 buttonLoginBtn.setEnabled(false);
-                final String email = fullName + "@immune.com";
+                final String email = phoneNumber + "@immune.com";
 
                 mAuth.signInWithEmailAndPassword(email, passWord)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {

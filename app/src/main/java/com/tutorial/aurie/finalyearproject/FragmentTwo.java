@@ -1,19 +1,15 @@
 package com.tutorial.aurie.finalyearproject;
 
-import android.content.Intent;
-import android.os.*;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.tutorial.aurie.finalyearproject.Adapters.DrProfileAdapter;
-import com.tutorial.aurie.finalyearproject.Adapters.ListShowAdapter;
 import com.tutorial.aurie.finalyearproject.Objects.DoctorProfileMessage;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.ChildList;
 
 import java.util.ArrayList;
 import java.util.List;

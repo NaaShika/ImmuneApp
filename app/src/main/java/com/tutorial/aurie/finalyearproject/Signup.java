@@ -81,7 +81,7 @@ public class Signup extends AppCompatActivity {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
                 } else {
-                    final User user = new User(fullName, phoneNumber, passWord);
+                    final com.tutorial.aurie.finalyearproject.Objects.User user = new com.tutorial.aurie.finalyearproject.Objects.User(fullName, phoneNumber, passWord);
 
                     Log.e("Print", "running");
 
@@ -97,16 +97,15 @@ public class Signup extends AppCompatActivity {
                             .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
+                                    Log.e("USerName", "onComplete: " + user.getName());
                                     // to enable the button again --true
                                     buttonSignUp.setEnabled(true);
 
-                                    Log.e("Print", "how about here");
-
                                     if (task.isSuccessful()) {
                                         UserInfo userInfo = task.getResult().getUser();
-
                                         DatabaseReference currentUser = mDatabase.child(id);
-                                        currentUser.child("Users").setValue(user, new DatabaseReference.CompletionListener() {
+
+                                        currentUser.setValue(user, new DatabaseReference.CompletionListener() {
                                             @Override
                                             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                                                 if (databaseError != null) {
@@ -123,7 +122,7 @@ public class Signup extends AppCompatActivity {
 
 
                                     } else {
-                                        Log.e("Print", task.getException().toString());
+                                        Log.e("Print","Error" ,task.getException());
                                         Toast.makeText(Signup.this, "SignUp not successful", Toast.LENGTH_LONG).show();
 
                                     }
@@ -142,5 +141,13 @@ public class Signup extends AppCompatActivity {
 
 
         });
+        textViewShortcutToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginIntent = new Intent(Signup.this, Login.class);
+                startActivity(loginIntent);
+            }
+        });
+
     }
 }

@@ -56,6 +56,7 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
         ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.rectangleImageView);
         ImageView imageViewChatImage = (ImageView) convertView.findViewById(R.id.imageViewChatImage);
         ImageView imageViewCallDr = (ImageView) convertView.findViewById(R.id.imageViewCallDr);
+        ImageView imageViewEmailDr = (ImageView) convertView.findViewById(R.id.imageViewEmailDr);
 
         textViewName.setText(doctorProfileMessage.getDoctorName());
         textViewSpeciality.setText(doctorProfileMessage.getSpeciality());
@@ -77,6 +78,13 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
                 context.startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", doctorProfileMessage.getPhoneNumber(), null)));
 
 
+            }
+        });
+
+        imageViewEmailDr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, ChatMessage.class));
             }
         });
 

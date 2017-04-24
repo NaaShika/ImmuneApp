@@ -44,7 +44,7 @@ public class ChldView extends AppCompatActivity {
             }
         });
 
-         imageView = (ImageView) findViewById(R.id.profileImageChild);
+         //imageView = (ImageView) findViewById(R.id.profileImageChild);
          editTextName = (EditText) findViewById(R.id.editTextChildName);
          editTextAge = (EditText) findViewById(R.id.editTextChildAge);
          editTextDOB = (EditText) findViewById(R.id.editTextChildDOB);

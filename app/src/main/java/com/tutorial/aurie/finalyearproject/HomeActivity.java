@@ -1,21 +1,7 @@
 package com.tutorial.aurie.finalyearproject;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.ChildList;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.DoctorProfileFragment;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.KnowledgeCentre;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.Profile;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.Records;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.Schedule;
+import android.support.v7.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -1,17 +1,15 @@
 package com.tutorial.aurie.finalyearproject;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.tutorial.aurie.finalyearproject.Adapters.TabAdapter;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.ChildList;
-import com.tutorial.aurie.finalyearproject.ToolbarActivities.KnowledgeCentre;
 import com.tutorial.aurie.finalyearproject.ToolbarActivities.Records;
 import com.tutorial.aurie.finalyearproject.ToolbarActivities.Schedule;
 

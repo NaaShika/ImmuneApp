@@ -17,12 +17,13 @@ import android.widget.TextView;
 
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.ion.Ion;
-import com.tutorial.aurie.finalyearproject.AddChild;
 import com.tutorial.aurie.finalyearproject.ChatMessage;
 import com.tutorial.aurie.finalyearproject.ChildListNew;
 import com.tutorial.aurie.finalyearproject.ChldView;
+import com.tutorial.aurie.finalyearproject.Objects.Child;
 import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
 import com.tutorial.aurie.finalyearproject.R;
+import com.tutorial.aurie.finalyearproject.ToolbarActivities.Schedule;
 
 import java.util.List;
 
@@ -30,8 +31,8 @@ import java.util.List;
  * Created by aurie on 07/04/2017.
  */
 
-public class GridAdapter extends ArrayAdapter<ChildMessage>{
-    private List<ChildMessage> childMessages;
+public class GridAdapter extends ArrayAdapter<Child>{
+    private List<Child> childMessages;
     private Activity context;
     private int resource;
 
@@ -47,21 +48,34 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
             convertView = layoutInflater.inflate(resource, parent, false);
         }
 
-        ChildMessage childMessage = childMessages.get(position);
+        final Child childMessage = childMessages.get(position);
         TextView textViewName = (TextView) convertView.findViewById(R.id.gridviewName);
         TextView textViewAge = (TextView)convertView.findViewById(R.id.gridviewAge);
         TextView textViewGender = (TextView)convertView.findViewById(R.id.gridviewGender);
         Button buttonAddChild = (Button) convertView.findViewById(R.id.buttonAddChild);
         final ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.gridviewImage);
 
-        textViewAge.setText(childMessage.getAge());
-        textViewName.setText(childMessage.getChildName());
-        textViewGender.setText(childMessage.getGender());
+        textViewAge.setText(childMessage.age);
+        textViewName.setText(childMessage.childName);
+        textViewGender.setText(childMessage.gender);
         /** imageViewProfilePic.setImageResource(childMessage.getProfileImage());//
          *
          */
+
+        buttonAddChild.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Schedule.class);
+                intent.putExtra("Id",childMessage.ID);
+                intent.putExtra("Name",childMessage.childName);
+                intent.putExtra("Email",childMessage.parentPhone);
+                context.startActivity(intent);
+
+            }
+        });
+
         Ion.with(context)
-                .load(childMessage.getProfileImage())
+                .load(childMessage.profileImage)
                 .asBitmap()
                 .setCallback(new FutureCallback<Bitmap>() {
                     @Override
@@ -72,18 +86,12 @@ public class GridAdapter extends ArrayAdapter<ChildMessage>{
                     }
                 });
 
-        buttonAddChild.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(context, AddChild.class));
 
-            }
-        });
 
         return convertView;
     }
 
-    public GridAdapter(@NonNull Activity context, @LayoutRes int resource, List<ChildMessage> childMessages) {
+    public GridAdapter(@NonNull Activity context, @LayoutRes int resource, List<Child> childMessages) {
         super(context, resource);
         this.childMessages = childMessages;
         this.context = context;
