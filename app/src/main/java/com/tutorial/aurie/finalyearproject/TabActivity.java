@@ -83,14 +83,8 @@ public class TabActivity extends AppCompatActivity {
             startActivity(new Intent(TabActivity.this, Schedule.class));
             return true;
         }
-        else if (id == R.id.menuKnowledgeCentre){
-            startActivity(new Intent(TabActivity.this, KnowledgeCentre.class));
-            return true;
-        }
-        else if (id == R.id.menuRecords){
-            startActivity(new Intent(TabActivity.this, Records.class));
 
-        }
+
         return super.onOptionsItemSelected(item);
 
     }

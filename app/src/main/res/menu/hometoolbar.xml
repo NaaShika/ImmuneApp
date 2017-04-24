@@ -19,7 +19,7 @@
             />
 
         <item
-            android:id="@+id/menuDDrProfile"
+            android:id="@+id/menuDrProfile"
             android:title="Doctor Profile"
             android:icon="@drawable/medical_specialist"
             />
@@ -29,11 +29,6 @@
             android:icon="@drawable/ic_schedule_black_24dp"
             />
 
-        <item
-            android:id="@+id/menuKnowledgeCentre"
-            android:title="Knowledge Centre"
-            android:icon="@drawable/ic_info_black_24dp"
-            />
 
         <item
             android:id="@+id/menuRecords"

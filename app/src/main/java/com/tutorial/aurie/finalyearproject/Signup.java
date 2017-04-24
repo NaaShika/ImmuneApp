@@ -39,7 +39,7 @@ public class Signup extends AppCompatActivity {
         final EditText editTextPhoneNumber = (EditText) findViewById(R.id.editTextPhoneNumber);
         TextView textViewShortcutToLogin = (TextView) findViewById(R.id.textViewShortcutToLogIn);
         final Button buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
-        final ProgressBar progressBar =(ProgressBar) findViewById(R.id.progressBar);
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         final Realm realm = Realm.getDefaultInstance();
 
@@ -71,20 +71,20 @@ public class Signup extends AppCompatActivity {
                 } else if (passWord.length() < 6) {
                     Toast.makeText(Signup.this, "Password not strong enough", Toast.LENGTH_LONG).show();
                     return;
-                }else {
-                        startActivity(new Intent(Signup.this, TabActivity.class));
+                } else {
+                    startActivity(new Intent(Signup.this, TabActivity.class));
                 }
 
-                Log.e("Print","running");
+                Log.e("Print", "running");
 
                 progressBar.setVisibility(View.VISIBLE);
                 // to disable the button
                 buttonSignUp.setEnabled(false);
-                Log.e("Print","checking");
+                Log.e("Print", "checking");
 
                 String email = phoneNumber + "@immune.com";
 
-                Log.e("Print","runningagain");
+                Log.e("Print", "runningagain");
 
 
                 mAuth.createUserWithEmailAndPassword(email, passWord)
@@ -94,25 +94,19 @@ public class Signup extends AppCompatActivity {
                                 // to enable the button again --true
                                 buttonSignUp.setEnabled(true);
                                 progressBar.setVisibility(View.GONE);
-                                Log.d("Served", "createUserWithEmail:onComplete:" + task.isSuccessful());
 
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-
-                                Log.e("Print","how about here");
+                                Log.e("Print", "how about here");
 
                                 if (task.isSuccessful()) {
-                                   startActivity(new Intent(Signup.this, TabActivity.class));
+                                    startActivity(new Intent(Signup.this, TabActivity.class));
                                     finish();
-                                }else {
+                                } else {
                                     Log.e("Print", "Can't figure it out");
                                     startActivity(new Intent(Signup.this, TabActivity.class));
                                 }
 
                             }
-                        } );
-
+                        });
 
 
             }

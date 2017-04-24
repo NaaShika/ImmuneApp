@@ -20,9 +20,10 @@ import java.util.List;
 
 public class FragmentOne extends Fragment {
 
-    public FragmentOne(){
+    public FragmentOne(){}
 
-    }
+
+
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,

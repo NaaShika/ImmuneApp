@@ -3,6 +3,7 @@ package com.tutorial.aurie.finalyearproject.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -21,12 +22,15 @@ import com.tutorial.aurie.finalyearproject.R;
 import com.tutorial.aurie.finalyearproject.RealmDatabase;
 
 import java.util.List;
+import java.util.jar.Manifest;
 
 /**
  * Created by aurie on 13/04/2017.
  */
 
 public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
+
+
     private List<DoctorProfileMessage> doctorProfileMessages;
     private Activity context;
     private int resource;
@@ -68,9 +72,12 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
         imageViewCallDr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, DoctorProfile.class));
+
+
             }
         });
+
+
 
         return convertView;
     }

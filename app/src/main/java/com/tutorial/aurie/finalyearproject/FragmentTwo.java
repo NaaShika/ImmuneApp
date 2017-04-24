@@ -44,8 +44,6 @@ public class FragmentTwo extends Fragment {
         listView.setAdapter(drProfileAdapter);
 
 
-
-
         return listView;
     }
 }

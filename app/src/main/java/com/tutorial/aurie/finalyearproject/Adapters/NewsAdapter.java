@@ -27,6 +27,12 @@ public class NewsAdapter extends ArrayAdapter<NewsObject> {
     private List<NewsObject> newsObjects;
 
 
+    @Override
+    public int getCount() {
+        return newsObjects.size();
+    }
+
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
