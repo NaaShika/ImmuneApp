@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textviewDoseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dose_name"
+        android:textColor="@color/colorBlack"
+        android:textSize="24sp" />
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/doseImage"
+        android:layout_below="@id/textviewDoseName"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/appdemoimage"
+        app:civ_border_color="@color/colorDarkGrey"
+        app:civ_border_width="4dp"
+        app:civ_shadow="true"
+        app:civ_shadow_color="@color/colorDarkGrey"
+        app:civ_shadow_radius="10" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDose"
+        android:layout_below="@id/textviewDoseName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_toRightOf="@+id/doseImage"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/textviewDose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dose 1"
+            android:textColor="@color/colorBlack"
+            android:textSize="24sp" />
+
+
+        <TextView
+            android:id="@+id/textviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dose_date"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -68,7 +68,7 @@ public class GridAdapter extends ArrayAdapter<Child>{
                 Intent intent = new Intent(context, Schedule.class);
                 intent.putExtra("Id",childMessage.ID);
                 intent.putExtra("Name",childMessage.childName);
-                intent.putExtra("Email",childMessage.parentPhone);
+                intent.putExtra("Email",childMessage.parentEmail);
                 context.startActivity(intent);
 
             }
