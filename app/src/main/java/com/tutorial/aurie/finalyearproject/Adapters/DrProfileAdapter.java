@@ -84,10 +84,15 @@ public class DrProfileAdapter extends ArrayAdapter<DoctorProfileMessage> {
         imageViewEmailDr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, ChatMessage.class));
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/html");
+                intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                intent.putExtra(Intent.EXTRA_TEXT, "I'm email body.");
+
+                context.startActivity(Intent.createChooser(intent, "Send Email"));
             }
         });
-
 
 
         return convertView;

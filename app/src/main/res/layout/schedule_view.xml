@@ -14,16 +14,16 @@
 
 
     <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/doseImage"
-        android:layout_below="@id/textviewDoseName"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/appdemoimage"
-        app:civ_border_color="@color/colorDarkGrey"
-        app:civ_border_width="4dp"
-        app:civ_shadow="true"
-        app:civ_shadow_color="@color/colorDarkGrey"
-        app:civ_shadow_radius="10" />
+    android:id="@+id/doseImage"
+    android:layout_below="@id/textviewDoseName"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:src="@drawable/appdemoimage"
+    app:civ_border_color="@color/colorDarkGrey"
+    app:civ_border_width="4dp"
+    app:civ_shadow="true"
+    app:civ_shadow_color="@color/colorDarkGrey"
+    app:civ_shadow_radius="10" />
 
     <LinearLayout
         android:id="@+id/linearLayoutDose"

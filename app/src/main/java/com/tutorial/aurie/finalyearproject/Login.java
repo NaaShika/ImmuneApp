@@ -19,6 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
 
@@ -39,6 +40,8 @@ public class Login extends AppCompatActivity {
         final Button buttonLoginBtn = (Button) findViewById(R.id.buttonLoginBtn);
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarLogin);
         final TextView textViewShortcutToSignUp = (TextView) findViewById(R.id.textViewShortcutToSignUp);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
 
         buttonLoginBtn.setOnClickListener(new View.OnClickListener() {
 

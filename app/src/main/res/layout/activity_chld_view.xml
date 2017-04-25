@@ -30,7 +30,7 @@
         android:layout_margin="10dp"
         android:hint="Name"
         android:inputType="text"
-        android:textColorHint="@color/colorDeepGreen" />
+        android:textColorHint="@color/colorBlack" />
 
     <EditText
         android:id="@+id/editTextChildAge"
@@ -40,7 +40,7 @@
         android:layout_margin="10dp"
         android:hint="Age"
         android:inputType="number"
-        android:textColorHint="@color/colorDeepGreen" />
+        android:textColorHint="@color/colorBlack" />
 
     <EditText
         android:id="@+id/editTextChildDOB"
@@ -48,13 +48,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextChildName"
         android:layout_centerHorizontal="true"
-        android:background="@color/blueGray200"
         android:hint="Date Of Birth"
         android:padding="15dp"
         android:textColor="#897"
-        android:textColorHint="@color/colorDeepGreen"
+        android:textColorHint="@color/colorBlack"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+
+        />
 
 
         <EditText
@@ -65,7 +66,7 @@
             android:layout_margin="10dp"
             android:hint="Gender"
             android:inputType="textAutoComplete"
-            android:textColorHint="@color/colorDeepGreen" />
+            android:textColorHint="@color/colorBlack" />
 
 
 
@@ -78,7 +79,7 @@
         android:layout_toRightOf="@+id/editTextGender"
         android:hint="Phone Number"
         android:inputType="number"
-        android:textColorHint="@color/colorDeepGreen"
+        android:textColorHint="@color/colorBlack"
 
         />
 
@@ -90,7 +91,7 @@
         android:layout_margin="10dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorDeepGreen"
+        android:textColorHint="@color/colorBlack"
 
         />
 
@@ -101,7 +102,7 @@
         android:layout_below="@+id/editTextParentEmail"
         android:layout_margin="10dp"
         android:text="Notifications"
-        android:textColor="@color/colorDeepGreen"
+        android:textColor="@color/colorBlack"
         android:textSize="24sp" />
 
     <Button
@@ -111,8 +112,10 @@
         android:layout_below="@+id/checkboxNotification"
         android:layout_margin="20dp"
         android:text="Save"
-        android:textColor="@color/colorDeepGreen"
-        android:textSize="24sp" />
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorDarkGreen"
+        android:textSize="24sp"
+        />
     </RelativeLayout>
 
 </android.support.v4.widget.NestedScrollView>

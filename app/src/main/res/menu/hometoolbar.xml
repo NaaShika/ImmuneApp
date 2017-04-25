@@ -35,12 +35,7 @@
             android:title="Records"
             android:icon="@drawable/record"
             />
-        <item
-            android:id="@+id/menuEmergencyContacts"
-            android:title="Emergency Contacts"
-            android:icon="@drawable/emergency_call"
 
-            />
 
     </group>
 

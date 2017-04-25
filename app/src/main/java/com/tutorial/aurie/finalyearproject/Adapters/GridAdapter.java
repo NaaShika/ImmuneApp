@@ -23,6 +23,7 @@ import com.tutorial.aurie.finalyearproject.ChldView;
 import com.tutorial.aurie.finalyearproject.Objects.Child;
 import com.tutorial.aurie.finalyearproject.Objects.ChildMessage;
 import com.tutorial.aurie.finalyearproject.R;
+import com.tutorial.aurie.finalyearproject.ScheduleListShow;
 import com.tutorial.aurie.finalyearproject.ToolbarActivities.Schedule;
 
 import java.util.List;
@@ -52,7 +53,8 @@ public class GridAdapter extends ArrayAdapter<Child>{
         TextView textViewName = (TextView) convertView.findViewById(R.id.gridviewName);
         TextView textViewAge = (TextView)convertView.findViewById(R.id.gridviewAge);
         TextView textViewGender = (TextView)convertView.findViewById(R.id.gridviewGender);
-        Button buttonAddChild = (Button) convertView.findViewById(R.id.buttonAddChild);
+        Button buttonAddSchedule = (Button) convertView.findViewById(R.id.buttonAddSchedule);
+        Button buttonViewSchedule = (Button) convertView.findViewById(R.id.buttonViewSchedule);
         final ImageView imageViewProfilePic = (ImageView) convertView.findViewById(R.id.gridviewImage);
 
         textViewAge.setText(childMessage.age);
@@ -61,14 +63,24 @@ public class GridAdapter extends ArrayAdapter<Child>{
         /** imageViewProfilePic.setImageResource(childMessage.getProfileImage());//
          *
          */
+        buttonViewSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ScheduleListShow.class);
+                intent.putExtra("Id",childMessage.ID);
+                intent.putExtra("Name",childMessage.childName);
+                intent.putExtra("Email",childMessage.parentPhone);
+                context.startActivity(intent);
 
-        buttonAddChild.setOnClickListener(new View.OnClickListener() {
+            }
+        });
+        buttonAddSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, Schedule.class);
                 intent.putExtra("Id",childMessage.ID);
                 intent.putExtra("Name",childMessage.childName);
-                intent.putExtra("Email",childMessage.parentEmail);
+                intent.putExtra("Email",childMessage.parentPhone);
                 context.startActivity(intent);
 
             }
